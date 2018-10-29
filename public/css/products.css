@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0; 
+ }
+div.Computer{
+   background:-webkit-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+   font-family:simhei;
+}
+
+div.Public{
+    width:214px;
+    background:-webkit-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+    margin-top:8px;
+    padding:8px;
+    font-family:simhei;
+
+}
+
+div.Public_1{
+     width:214px;
+    height:180px;
+    background:#fff;
+
+
+}
+
+div.Public_1 p{
+    width:180px;
+    font:12px "microsoft yahei";
+    color: #808080;
+    margin-bottom:5px;
+    margin-left:20px;
+}
+
+div.Public_1 p.p1{
+    margin-top:20px;
+
+}
+
+/*���ﳵ���˲���*/
+
+div.shop_Car_Top{
+    width:214px;
+    height:28px;
+    background: -webkit-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+    font: 14px simhei;
+    color:#b8b8b8;
+    border-radius:2px;
+}
+
+div.shop_Car_Bottom{
+  width:214px;
+   height:48px;
+    line-height:48px;
+   background:#808080;
+    border-radius:2px;
+    margin-top:2px;
+    color:#fff;
+    font-size:20px;
+
+}
+
+a.Settle{
+    background:#1AA0ed;
+    color:#fff;
+    padding:0 5px;
+
+}
+
+/*�̶�λ��*/
+
+
+
+
+
+
+
+
+div.UZI{
+    width:232px;
+    height:372px;
+
+
+}
+
+div img.my-img1{
+    height:230px;
+    width:230px;
+
+}
+div span.Price{
+    color:#1AA0ed;
+    font-weight:bold;
+    margin-left:10px;
+}
+
+div h4.Details{
+    margin:0 6px;
+    font:12px "microsoft yahei";
+}
+
+span.span_k{
+   display:inline-block;
+    width:30px;
+    height:30px;
+    background:#E3E3E3;
+    color:#fff;
+    text-align:center;
+    font-size:24px;
+    line-height:26px;
+    margin-left:10px;
+}
+
+input.input_k{
+    display:inline-block;
+    width:30px;
+    text-align:center;
+}
+
+a.a_k{
+    width:100px;
+    height:32px;
+    background: -webkit-linear-gradient(top, #27b1f6 0%, #0aa1ed 100%);
+    line-height:14px;
+    font:14px simhei;
+    color:#fff;
+
+}

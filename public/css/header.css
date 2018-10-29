@@ -1,0 +1,79 @@
+
+
+
+.img1{
+
+    height:60px;
+     margin-left:60px;
+
+}
+
+div.color_k{
+   background:#090909;
+}
+
+
+/*右浮动*/
+
+ul.right li a{
+    color:#f2f2f2;
+    margin:0 20px 0 20px;
+    text-decoration:none;
+    font-size:15px;
+}
+
+ul.right li a:hover{
+    color:red;
+}
+
+ul.right li{
+   color:#f2f2f2;
+   line-height:100px;
+
+}
+
+
+
+/*商城首页这一行*/
+div.color_kk {
+    background:#202020;
+}
+
+ul.left_two li a.active{
+    color:red;
+}
+
+ul.left_two li a:hover{
+    color:red;
+}
+
+
+
+ul.left_two li a{
+    color:#f2f2f2;
+    margin:0 10px 0 16px;
+    text-decoration:none;
+    font-size: 16px;
+
+
+
+}
+
+ul.left_two li{
+    margin-top:10px;
+}
+
+/*搜索框*/
+
+#search_k{
+   line-height:50px;
+   margin-bottom:2px;
+
+
+}
+
+.Search{
+   height:38px;
+
+}
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <script  src="js/jquery.min.js"></script>
+    <script  src="js/popper.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+
+</head>
+ <style>
+
+    .dropdown a{
+			text-decoration:none; 
+			color:#000;
+
+		}
+
+		.dropdown-menu{
+			list-style:none; 
+      margin:0 auto; padding:0;
+			border:1px solid #aaa;
+			box-shadow:5px 5px 6px #000;
+		}
+	.dropdown-menu li{
+  border-bottom:1px solid red;
+    width:100px;
+  }
+		.dropdown-menu li:hover{background:red}
+  </style>
+
+<body>
+
+
+
+
+    <div class="container color_k">
+     <div class="row">
+         <div class="col-2 header_left">
+             <img src="images/uugai.com_1533219499595.png" alt="" class="img1 mt-2"/>
+         </div>
+
+         <div class="col-10 ">
+                <ul class="list-unstyled right pb-5">
+
+                    <li class="float-right"><a href="login.html" target="_parent">登录</a>
+
+                    </li>
+                    <li class="float-right"><a href="register.html" target="_parent">注册</a>
+                        <b>|</b>
+                    </li>
+                    <li class="float-right"><a href="#">帮助中心</a>
+                        <b>|</b>
+                    </li>
+
+                    <li class="float-right"><a href="#">购物车</a>
+                     <b>|</b>
+                    </li>
+                    <li class="float-right"><a href="personCenter.html" target="_parent">个人中心</a>
+                     <b>|</b>
+                    </li>
+                    <li class="float-right"><a href="personCenter.html" target="_parent">我的订单</a>
+                   <b>|</b>
+                    </li>
+
+                    
+                </ul>
+
+          </div>
+
+        </div>
+
+       <!--首页商城这一行-->
+        <div class="row color_kk">
+           <div class="col-9">
+            <ul class="list-unstyled left_two ">
+               <li class="float-left "><a href="index.html" class="active" target="_parent">商城首页</a></li>
+                <li class="float-left dropdown"><a href="#" data-trigger="dropdown" >LOL主题系列</a>
+                <ul class=" dropdown-menu" >
+                   <li>戒指</li>
+                   <li>玩具</li>
+                   <li>电视</li>
+                   <li>kkk</li>
+                </ul>
+
+               </li>
+               <li class="float-left"><a href="product_king.html" target="_parent">王者荣耀主题系列</a></li>
+                <li class="float-left"><a href="product_Eq.html">电竞设备</a></li>
+                <li class="float-left"><a href="products_shoes.html" target="_parent">潮鞋系列</a></li>
+                <li class="float-left"><a href="product_play.html" target="_parent">大神陪玩</a></li>
+                <li class="float-left"><a href="#">其它</a></li>
+           </ul>
+           </div>
+            <div class="col-3 d-flex"  id="search_k">
+                <input type="text" placeholder="搜索" class="border-0 btn text-left float-left "/>
+                <a href="#"> <img src="images/search.png" alt="" class="float-left Search"/></a>
+            </div>
+
+        </div>
+
+
+
+
+
+   </div>
+
+		<script>
+
+    $("[data-trigger=dropdown]").next().hide()
+		$("[data-trigger=dropdown]").click(function(){
+      var $btn=$(this);
+      var $ul=$btn.next();
+   if($ul.is(":hidden"))
+       $ul.show();
+       else
+             $ul.hide();
+    })
+
+		
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

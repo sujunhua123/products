@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script  src="js/jquery.min.js"></script>
+    <script  src="js/popper.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/product_play.css"/>
+    <script  src="js/vue.js"></script>
+</head>
+<style>
+    [v-cloak]{
+       display:none; 
+    }
+</style>
+
+<body>
+    <!--引入头部-->
+    <table></table>
+   <header id="header" class="my-header"></header>
+
+    <div class="container" id="select-server">
+     <div id="list-player" class="height_2">
+           <div class="row  nav-item">
+              <ul class="list-unstyled mb-0 pt-4">
+                  <li class="float-left"><h6>游戏服务:</h6></li>
+                  <li class="float-left">
+                <img src="image/play/1.1.png" alt=""/>
+                <p>英雄联盟</p>
+                  </li>
+                  <li class="float-left">
+                      <img src="image/play/2.2.png" alt=""/>
+                      <p>绝地求生</p>
+                 </li>
+                  <li class="float-left">
+                      <img src="image/play/3.3.png" alt=""/>
+                      <p>王者荣耀</p>
+                </li>
+                  <li class="float-left">
+                      <img src="image/play/4.4.png" alt=""/>
+                      <p>魔兽争霸</p>
+                  </li>
+              </ul>
+           </div>
+
+          <div class="row nav-item">
+              <ul class="list-unstyled">
+                  <li class="float-left"><h6>陪玩性别:</h6></li>
+                  <li class="float-left">
+                  </li>
+                  <li class="float-left">
+                      <span >男神</span>
+                  </a></li>
+                  <li class="float-left">
+                      <span>女神</span>
+                 </li>
+
+              </ul>
+          </div>
+             <div class="row nav-item">
+                 <ul class="list-unstyled ">
+                     <li class="float-left"><h6>等级要求:</h6></li>
+                     <li class="float-left">
+                         <span>英勇黄铜</span>
+                     </li>
+                     <li class="float-left">
+                         <span>不屈白银</span>
+                     </li>
+                     <li class="float-left">
+                         <span>荣耀黄金</span>
+                     </li>
+                     <li class="float-left">
+                         <span>璀璨钻石</span>
+                    </li>
+                     <li class="float-left">
+                         <span>超凡大师</span>
+                     </li>
+                     <li class="float-left">
+                         <span>最强王者</span>
+                     </li>
+                 </ul>
+             </div>
+             <div class="row nav-item">
+                 <ul class="list-unstyled ">
+                     <li class="float-left"><h6>个性要求:</h6></li>
+                     <li class="float-left">
+                         <span>御姐</span>
+                    </li>
+                     <li class="float-left">
+                         <span>萝莉</span>
+                   </li>
+                     <li class="float-left">
+                         <span>激情四射</span>
+                    </li>
+                     <li class="float-left">
+                         <span>逗比</span>
+                     </li>
+                     <li class="float-left">
+                         <span>声甜貌美</span>
+                    </li>
+                     <li class="float-left">
+                         <span>颜值担当</span>
+                    </li>
+                     <li class="float-left">
+                         <span>活泼可爱</span>
+                     </li>
+                     <li class="float-left">
+                         <span>逗比</span>
+                     </li>
+                     <li class="float-left">
+                     <span>电竞达人</span>
+                   </li>
+                     <li class="float-left">
+                         <span>服从指挥</span>
+                    </li>
+                     <li class="float-left">
+                         <span>打野爸爸</span>
+                     </li>
+                     <li class="float-left">
+                         <span>强势Carry</span>
+                     </li>
+                     <li class="float-left">
+                         <span>枪刚人稳</span>
+                    </li>
+                     <li class="float-left">
+                         <span>全场凯翔</span>
+                     </li>
+                 </ul>
+             </div>
+         <div class="row nav-item"  >
+             <ul class="list-unstyled">
+                 <li class="float-left"><h6>已选:</h6></li>
+                 <li class="float-left ml-5" v-for="(v,i) in tasks" v-cloak> <span>{{v}}</span>
+                  <button @click="remove(i)">X</button>
+                </li>
+             </ul>
+         </div>
+     </div>
+       <button id="take-up"  class="btn btn-dark mt-2">收起筛选框</button>
+    <!--照片类-->
+         <div class="row mt-4">
+          <ul class="list-unstyled nav-list">
+              <li class="float-left"><a href="">综合排序</a></li>
+              <li class="float-left"><a href="">接单</a></li>
+              <li class="float-left"><a href="">价格</a></li>
+              <li class="float-left"><a href="">评价</a></li>
+              <li class="float-left"><a href="">新人</a></li>
+              <li class="float-left"><a href="">超时赔</a></li>
+          </ul>
+         </div>
+
+        <div class="row">
+            <div class="row col-10 nav-gif">
+                <a href="">
+               <img src="image/play/100.gif" alt="" class="nav-img"/>
+                <div class="nav-player">
+                 <span class="text-dark ml-2">keke</span>
+                  <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+              </div>
+              <div class="nav-player">
+                <span class="ml-2 player-size1">在线</span>
+                 <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+              </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/36.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">萌妹子</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/106.gif" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">xiaohu</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">最强王者</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥100.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/35.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">云云</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/10.png" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">超哥</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/44.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">icon</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+
+                <a href="">
+                    <img src="image/play/32.png" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">小苏</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+
+                <a href="">
+                    <img src="image/play/107.gif" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">Ming</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">最强王者</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+
+                <a href="">
+                    <img src="image/play/114.gif" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">keke</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/47.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">keke</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/45.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">keke</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <img src="image/play/46.jpg" alt="" class="nav-img"/>
+                    <div class="nav-player">
+                        <span class="text-dark ml-2">keke</span>
+                        <span class="float-right player-grade  mr-2 mt-1 px-1">璀璨钻石</span>
+                    </div>
+                    <div class="nav-player">
+                        <span class="ml-2 player-size1">在线</span>
+                        <span class="float-right player-size2 mr-2"><b>￥15.00</b>/小时</span>
+                    </div>
+                </a>
+
+            </div>
+           <!--榜单-->
+
+             <div class="col-2 p-0 ml-3">
+              <div class="List">
+                  <span class="mt-2 ml-2"><b>人气</b>榜</span>
+                   <span class="float-right mt-2 mr-2">周榜</span>
+               <div class="List-img row mt-3">
+                  <div class="col-4">
+                  <a href="#">
+                      <img src="image/play/small/1.1.png" alt=""/>
+                  </a>
+                  </div>
+                 <div class="col-8 pt-3 List-item">
+                    <p class="mb-0">软可 最强王者</p>
+                     <p class="mb-0">时长 <b>615</b></p>
+                 </div>
+               </div>
+
+                 <div class="List-img row mt-2">
+                 <div class="col-4">
+                     <a href="#">
+                         <img src="image/play/small/2.2.png" alt=""/>
+                     </a>
+                 </div>
+                 <div class="col-8 pt-3 List-item">
+                     <p class="mb-0">软可 最强王者</p>
+                     <p class="mb-0">时长 <b>485</b></p>
+                 </div>
+             </div>
+
+                 <div class="List-img row mt-2">
+                     <div class="col-4">
+                         <a href="#">
+                             <img src="image/play/small/3.3.png" alt=""/>
+                         </a>
+                     </div>
+                     <div class="col-8 pt-3 List-item">
+                         <p class="mb-0">软可 最强王者</p>
+                         <p class="mb-0">时长 <b>485</b></p>
+                     </div>
+                 </div>
+
+                 <div class="List-img row mt-2">
+                     <div class="col-4">
+                         <a href="#">
+                             <img src="image/play/small/3.4.png" alt=""/>
+                         </a>
+                     </div>
+                     <div class="col-8 pt-3 List-item">
+                         <p class="mb-0">软可 最强王者</p>
+                         <p class="mb-0">时长 <b>485</b></p>
+                     </div>
+                 </div>
+
+                 <div class="List-img row mt-2 pb-3">
+                     <div class="col-4">
+                         <a href="#">
+                             <img src="image/play/small/5.5.png" alt=""/>
+                         </a>
+                     </div>
+                     <div class="col-8 pt-3 List-item">
+                         <p class="mb-0">软可 最强王者</p>
+                         <p class="mb-0">时长 <b>485</b></p>
+                     </div>
+                 </div>
+
+              </div>
+
+
+
+
+             </div>
+        </div>
+
+        <!--翻页-->
+
+
+        <ul class="list-unstyled page_666 text-right ">
+            <li><a href="#">下一页</a></li>
+            <li ><a href="#">4</a></li>
+            <li ><a href="#">3</a></li>
+            <li ><a href="#">2</a></li>
+            <li ><a href="#">1</a></li>
+            <li><a href="#">上一页</a></li>
+        </ul>
+
+        <!--下面的自动轮播图-->
+        <div class=" mt-5 text-center auto_1">
+            <p class="pt-5 mb-2">
+                <span class="auto_2">--------主播推荐--------主播推荐--------主播推荐--------</span>
+                <a href="#" class="float-right auto_3">查看更多推荐>></a>
+            </p>
+        </div>
+        <div id="d1">
+            <ul>
+                <li><img src="image/play/101.gif"/>
+                    <p>可可</p>
+                </li>
+                <li><img src="image/play/40.png"/>
+                    <p>云云</p>
+                </li>
+                <li><img src="image/play/106.gif"/>
+                    <p>xiaohu</p>
+                </li>
+                <li><img src="image/play/37.jpg"/>
+                    <p>苏苏</p>
+                </li>
+                <li><img src="image/play/113.gif"/>
+                    <p>妮妮</p>
+                </li>
+                <li><img src="image/play/44.jpg"/>
+                    <p>彤彤</p>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!--引入底部-->
+  <footer id="footer" class="my-footer"></footer>
+    <script src="js/ajax.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/product_play.js"></script>
+
+</body>
+</html>

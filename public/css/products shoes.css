@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0; 
+ }
+[v-cloak]{
+    
+    display:none}
+
+/*综合 人气 销量 信用 价格*/
+
+.a_1{
+    background:#ddd;
+}
+.a_1 a{
+   margin:0 20px;
+   color:#333;
+   padding:10px;
+}
+
+.a_1 a:hover{
+    text-decoration: none;
+}
+/*表单里面多选按钮*/
+#Form{
+   border:1px solid #ddd;
+   margin-bottom:16px;
+}
+#Form label{
+    margin-top:10px;
+   margin-right:12px;
+   padding:0 16px;
+
+
+}
+
+/*价格的字体大小*/
+.Shoes_Size{
+     font-size:18px;
+    color:red;
+
+}
+
+/*翻页列表*/
+ul.page_666 li{
+    float:right;
+  padding:6px 16px;
+   font-size:18px;
+   margin:0 4px;
+ border:2px solid #090909;
+  border-radius:4px;
+   background:#090909;
+}
+ul.page_666 li a{
+   color:white;
+}
+
+
+ul.page_666 li a:hover{
+  text-decoration: none;
+   color:red;
+}
+
+/*下面的自动轮播图*/
+.auto_1{
+  border-bottom: 3px solid #F74D2A;
+}
+
+.auto_2{
+    color:#f74d2a;
+    font-size:15px;
+}
+
+.auto_3{
+  color:#f74d2a;
+  font-size:15px;
+  border:1px solid #f74d2a;
+  padding:5px 10px;
+}
+
+.auto_3:hover{
+    text-decoration: none;
+    color:#f74d2a;
+}
+
+
+/*自动轮播图的图片大小*/
+#d1 ul{
+    list-style: none;
+    width: 2895px;
+    border: 3px solid orange;
+}
+
+#d1 ul li{
+    float: left;
+    margin: 10px;
+}
+
+#d1{
+    width: 100%;
+    height: 260px;
+    border: 1px solid red;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#d1 ul li img{
+    width:180px;
+    height:210px;
+}
+
+#d1 ul li p{
+    text-align: center;
+  font-size: 14px;
+   font-weight: bold;
+
+}

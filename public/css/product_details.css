@@ -1,0 +1,162 @@
+/*--、面包屑导航 ：#bread-crumb --*/
+.bread_crumb{
+    background:#ddd;
+}
+
+.bread_crumb li a{
+   color:#333;
+  font-size: 14px;
+}
+
+.bread_crumb li a:hover{
+   color:red;
+  text-decoration: none;
+}
+/*小图样式*/
+.small_img{
+  top:470px; 
+  width:400px;  
+}   
+
+.small_img ul li{
+    float:left;
+    margin:0 5px;
+   cursor:pointer; 
+}
+
+.small_img ul li  img{
+    width:54px;
+    height:54px;
+
+}
+
+
+
+
+/*主图框架大小*/
+.img_size{
+    border:1px solid #ddd;
+    box-shadow: 0 0 5px 5px #FAEDEC;
+    width:450px;
+    height:450px;
+}
+
+.img_size img{
+  width:400px;
+  height:400px;
+  margin-top:25px;
+
+}
+
+.p-price{
+    background: linear-gradient(to bottom,#f2dede,#FDE5E0);
+    width:560px;
+    height:100px;
+    border-radius:6px;
+}
+
+.p-price p{
+    line-height: 50px;
+}
+
+.p-price p span{
+    font-size:20px;
+}
+
+/*鞋子的码数*/
+.size a{
+   display:inline-block;
+   width:60px;
+   height:40px;
+   line-height: 40px;
+  border:2px solid #1AA0ed;
+    color:black;
+   text-align: center;
+  margin:2px;
+    border-radius:2px;
+}
+.size{
+    width:400px;
+}
+
+
+.size a:hover{
+    color:red;
+    text-decoration: none;
+}
+
+/*数量的加减*/
+.count button,.count input{
+   width:36px;
+    height:36px;
+   text-align: center;
+}
+
+
+
+/*其他推荐*/
+#other{
+  margin-top:100px;
+
+}
+
+#d1 ul{
+    list-style: none;
+    width: 2895px;
+    border: 3px solid orange;
+}
+
+#d1 ul li{
+    float: left;
+    margin: 10px;
+}
+
+#d1{
+    width: 100%;
+    height: 260px;
+    border: 1px solid red;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#d1 ul li img{
+    width:180px;
+    height:210px;
+}
+
+#d1 ul li p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+/*放大效果*/
+
+#mask{
+    width:176px; height:176px;
+    background-color:#ffa;
+    opacity:.5;
+  }
+  #super-mask{
+    width:400px; height:400px;
+    left:40px;
+    top:26px;
+  
+  }
+  #div-lg{
+    width:400px; height:400px;
+    left:480px;
+    top:-20px;
+    z-index:1000;
+    background:#fff;
+    border:1px solid red;
+    /*background: url(../image/lol/1.jpg) no-repeat;*/
+   /* background-size:1000px 990px; */
+  }
+  
+  .big-img{
+   width:354px;
+  }

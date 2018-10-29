@@ -1,0 +1,148 @@
+[v-cloak]{
+   display:none; 
+}
+.person_img{
+    width:1100px;
+   margin:0 auto;
+   margin-top:1px;
+}
+
+.person_center1{
+    margin-left:3px;
+}
+
+
+.person_center1 li{
+    border:1px solid #E1E1E1;
+   padding:10px;
+   text-align: center;
+   background:#F0F0F0;
+
+}
+
+.person_center1 li:last-child{
+    height:130px;
+}
+
+/*我的订单激活状态*/
+.person_center1 .active{
+    border-left:0;
+    border-right:0;
+    background:#F5F5F5;
+}
+
+.person_center1 .active a{
+    color:red;
+}
+
+
+
+
+.person_center2 li{
+   margin:20px 20px 10px 20px;
+   font-size:14px;
+   text-align:center;
+
+}
+
+
+.person_center2 .active{
+    background:red;
+    color:white;
+    width:60px;
+    height:24px;
+}
+
+.person_detail{
+    background:#F0F0F0;
+    height:40px;
+    line-height:40px;
+}
+
+.person_detail div{
+    font-size:14px;
+}
+
+.person_center3 li{
+     margin-right:96px;
+}
+.record{
+   border-bottom:1px solid #E1E1E1;
+}
+
+.record p{
+    margin:24px auto;
+    font-size:12px;
+
+
+}
+
+
+/*购物车商品*/
+.carts-checkbox{
+   height:24px;
+   width:24px;
+  margin-right:16px; 
+
+
+}
+
+.carts-img{
+  height:100px;
+  width:80px;
+
+}
+
+
+
+.carts div{
+    margin-top:32px;
+}
+
+.carts-less,.carts-add,.carts-num{
+   height:28px;
+   width:24px;
+}
+
+/*收藏删除*/
+
+
+.Delete{
+  cursor:pointer; 
+}
+
+.Delete span:nth-child(1):hover{
+  color:#00A8FF;
+}
+
+.Delete span:nth-child(2):hover{
+    color:red;
+}
+
+/*总计*/
+
+#totals{
+  margin-left:1px;
+  border-bottom:1px solid #E1E1E1;
+  padding:24px 0; 
+   
+}
+
+.all_select{
+  margin-right:20px;  
+}
+.delete_carts{
+  margin-left:620px;
+  cursor:pointer; 
+}
+
+
+.delete_carts:hover{
+    color:red;
+}
+
+.money{
+ color:red;
+ font-size:18px;
+    
+}

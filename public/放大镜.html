@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script  src="js/popper.min.js"></script>
+    <script  src="js/jquery.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+</head>
+<style>
+
+
+#mask{
+  width:176px; height:176px;
+  background-color:#ffa;
+  opacity:.5;
+}
+#super-mask{
+  width:400px; height:400px;
+  border:1px solid red;
+
+}
+#div-lg{
+  width:400px; height:400px;
+  left:352px;
+  z-index:1000;
+  border: 1px solid red;
+background: url(img/11.png) no-repeat;
+background-size:800px 800px;
+}
+
+.big-img{
+ width:354px;
+}
+
+</style>
+<body>
+
+ <div class="card bg-transparent mr-5 position-absolute">
+     <img class="big-img" src="img/11.png" alt="Card image cap" data-target="img/11.png">
+           <div id="mask" class=" d-none position-absolute"></div>
+              <div id="super-mask" class="position-absolute"></div>
+              <div id="div-lg" class="  position-absolute d-none"></div>
+     </div> 
+ 
+
+ <script>
+ //rgba(0, 0, 0, 0.125);
+ var  sMask=document.getElementById("super-mask");
+  var  mask=document.getElementById("mask")
+ var  divLg=document.getElementById("div-lg")
+ sMask.onmousemove=function(e){
+       var {offsetX,offsetY}=e;
+       var top=offsetY-88;
+       var left=offsetX-88;
+       top=top<0?0:top>176?176:top;
+       left=left<0?0:left>176?176:left;
+       mask.style.top=`${top}px`;
+        mask.style.left=`${left}px`;
+        divLg.style.backgroundPosition=`${-16/7*left}px ${-16/7*top}px`;
+    }  
+
+    sMask.onmouseover=function(){
+         mask.className=mask.className.replace("d-none","")
+       divLg.className=divLg.className.replace("d-none","")
+    }
+  sMask.onmouseout=function(){
+         mask.className+=" d-none";
+       divLg.className+=" d-none";
+    }
+
+ 
+  /*var $sMask=$("#super-mask")
+ var  $mask=$("#mask")
+    $sMask.mousemove(function(e){
+      var {offsetX,offsetY}=e;
+      var top=offsetY-88;
+      var left=offsetX-88;
+      var top1=`${top}px`
+       var left1=`${left}px`;
+      $mask.css("top","top1");
+       $mask.css("left","left1");
+    })
+   
+
+  $sMask.mouseover(function(){ 
+
+        $("#div-lg").css("background","url(img/11.png)")
+           $("#mask").removeClass("d-none");
+           $("#div-lg").removeClass("d-none")
+    
+
+     })
+ $sMask.mouseout(function(){
+      $("#mask").addClass("d-none")
+       $("#div-lg").addClass("d-none")
+  })    */
+
+ </script>
+
+
+</body>
+</html>

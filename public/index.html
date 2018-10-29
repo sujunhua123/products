@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <script  src="js/jquery.min.js"></script>
+    <script  src="js/popper.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+
+</head>
+
+
+
+<body>
+  <!--引入header-->
+  <table></table> 
+  <header id="header" class="my-header">
+ <!--<iframe src="header.html" frameborder="0" class="my-header"></iframe> -->
+</header>
+  <!--首页内容-->
+<div class="container  main">
+    <div id="demo" class="carousel" data-ride="carousel">
+        <!--指示器-->
+        <ul class="carousel-indicators active_demo">
+            <li data-target="#demo" data-slide-to="0" class="active demo_1"></li>
+            <li data-target="#demo" data-slide-to="1" class=" demo_1"></li>
+            <li data-target="#demo" data-slide-to="2" class=" demo_1"></li>
+            <li data-target="#demo" data-slide-to="3" class=" demo_1"></li>
+        </ul>
+        <div class="carousel-inner " id="carousel">
+            <div class="carousel-item active" >
+                <a href=""><img src="lunbo/LOL6.jpg" alt="" class="img_k" /></a>
+            </div>
+
+            <div class="carousel-item ">
+                <a href=""><img src="lunbo/LOL4.jpg" alt=""  class="img_k" /></a>
+            </div>
+
+            <div class="carousel-item ">
+                <a href=""><img src="lunbo/timg (1).jpg" alt=""   class="img_k"/></a>
+            </div>
+
+            <div class="carousel-item ">
+                <a href=""><img src="lunbo/4.jpg" alt=""   class="img_k" /></a>
+            </div>
+
+        </div>
+        <!--指示箭头-->
+      <a href="#demo" class="carousel-control-prev Arrow_left" data-slide="prev" >
+            <span class="carousel-control-prev-icon "></span>
+        </a>
+        <a href="#demo" class="carousel-control-next Arrow_right" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <!--首页中间部分-->
+   <div>
+      <p class="font-weight-bold pt-3 Floor">热销商品/Hot Selling
+      </p>
+     <div class="row p_color">
+        <div class="col-3" v-for="(item,index) in hotproducts" v-cloak v-if="25<index&&index<30"><a :href="'product_details.html?pid='+item.pid"><img :src="item.img_url" alt="" class="img_Hot"/>
+         <p class="text-center font-weight-bold p-2">{{item.title}}</p></a>
+        </div>   
+     </div>
+
+
+
+
+    <p class="font-weight-bold pt-3 Floor">最新上架/New Shelf</p>
+
+    <div class="row  p_color mb-4">
+      <div class="col-3 p-0 lunbo_list" id="d1" > 
+                    <ul  id="d1_1" class="list-unstyled text-center" >
+                       <li v-for="(item,index) in lunboList" v-cloak ><a href=""><img :src="item.img_url" alt="" class="vertical-img"/>
+                        <p class="vertical-title">{{item.title}}</p>
+                        <span class="vertical-price">￥{{item.price.toFixed(2)}}</span>
+                    </a>
+                     </li>
+                  <!--   <li><a href=""><img src="image/kings/17.jpg" alt="" class="vertical-img"/>
+                        <p class="vertical-title">电竞轻薄笔记本</p>
+                        <span class="vertical-price">￥399.00</span>
+                    </a>
+                     </li>
+                     <li><a href=""><img src="image/game/2.jpg" alt="" class="vertical-img"/>
+                        <p class="vertical-title">电竞轻薄笔记本</p>
+                        <span class="vertical-price">￥399.00</span>
+                    </a>
+                     </li>
+                     <li><a href=""><img src="image/game/9.jpg" alt="" class="vertical-img"/>
+                        <p class="vertical-title">电竞轻薄笔记本</p>
+                        <span class="vertical-price">￥399.00</span>
+                    </a>
+                     </li>
+                     <li><a href=""><img src="image/kings/11.png" alt="" class="vertical-img"/>
+                        <p class="vertical-title">电竞轻薄笔记本</p>
+                        <span class="vertical-price">￥399.00</span>
+                    </a>
+                     </li>
+                     <li><a href=""><img src="image/shoes/3.jpg" alt="" class="vertical-img"/>
+                        <p class="vertical-title">电竞轻薄笔记本</p>
+                        <span class="vertical-price">￥399.00</span>
+                    </a>
+                     </li>  -->
+
+                    </ul>
+                    <ul  id="d1_2" class="list-unstyled text-center" >
+                        <li v-for="(item,index) in lunboList"><a href=""><img :src="item.img_url" alt="" class="vertical-img"/>
+                         <p class="vertical-title" v-cloak>{{item.title}}</p>
+                         <span class="vertical-price">￥{{item.price.toFixed(2)}}</span>
+                     </a>
+                      </li>
+                   <!--   <li><a href=""><img src="image/kings/17.jpg" alt="" class="vertical-img"/>
+                         <p class="vertical-title">电竞轻薄笔记本</p>
+                         <span class="vertical-price">￥399.00</span>
+                     </a>
+                      </li>
+                      <li><a href=""><img src="image/game/2.jpg" alt="" class="vertical-img"/>
+                         <p class="vertical-title">电竞轻薄笔记本</p>
+                         <span class="vertical-price">￥399.00</span>
+                     </a>
+                      </li>
+                      <li><a href=""><img src="image/game/9.jpg" alt="" class="vertical-img"/>
+                         <p class="vertical-title">电竞轻薄笔记本</p>
+                         <span class="vertical-price">￥399.00</span>
+                     </a>
+                      </li>
+                      <li><a href=""><img src="image/kings/11.png" alt="" class="vertical-img"/>
+                         <p class="vertical-title">电竞轻薄笔记本</p>
+                         <span class="vertical-price">￥399.00</span>
+                     </a>
+                      </li>
+                      <li><a href=""><img src="image/shoes/3.jpg" alt="" class="vertical-img"/>
+                         <p class="vertical-title">电竞轻薄笔记本</p>
+                         <span class="vertical-price">￥399.00</span>
+                     </a>
+                      </li>  -->
+ 
+                     </ul>
+                
+               
+       </div>
+
+     <div class="col-7 flex-size p-0">
+         
+      <ul id="tab" class="pl-0 mb-0 list-unstyled clear">        
+         <li class="flex-item"><a data-toggle="tab" href="#content1">新品</a></li>
+         <li  class="flex-item"><a data-toggle="tab" href="#content2">LOL</a></li>
+        <li  class="flex-item"><a data-toggle="tab" href="#content3">KPL</a></li>
+         <li  class="flex-item"><a data-toggle="tab" href="#content4">电竞设备</a></li>
+      </ul>
+  <div id="content_1">
+       <div id="content1">
+          <div>
+              <a href="javascript:;"><img :src="products[42].img_url" alt="" class="flex-img"/></a>
+           </div>
+                <div class="text-center" v-for="(item) in products.slice(43,51)"  v-cloak ><a :href="'product_details.html?pid='+item.pid"><img :src="item.img_url" alt="" class="img_middle"/>
+                    <p class=" font-weight-bold p-2 mb-0">{{item.title}}</p>
+                    <span class="flex-price">￥{{item.price.toFixed(2)}}</span>
+                </a>
+                </div>     
+       </div>
+       <div id="content2">
+        <div>
+            <a href="javascript:;"><img :src="products[51].img_url" alt="" class="flex-img"/></a>
+         </div>
+              <div class="text-center" v-for="(item) in products.slice(52,60)"><a :href="'product_details.html?pid='+item.pid"><img :src="item.img_url" alt="" class="img_middle"/>
+                  <p class=" font-weight-bold p-2 mb-0">{{item.title}}</p>
+                  <span class="flex-price">￥{{item.price.toFixed(2)}}</span>
+              </a>
+              </div>
+             
+     </div>
+      <div id="content3">
+        <div>
+            <a href="javascript:;"><img :src="products[60].img_url" alt="" class="flex-img"/></a>
+         </div>
+              <div class="text-center" v-for="(item) in products.slice(61,69)"><a :href="'product_details.html?pid='+item.pid"><img :src="item.img_url" alt="" class="img_middle"/>
+                  <p class=" font-weight-bold p-2 mb-0">{{item.title}}</p>
+                  <span class="flex-price">￥{{item.price.toFixed(2)}}</span>
+              </a>
+              </div>          
+        </div>
+        <div id="content4">
+            <div>
+                <a href="javascript:;"><img :src="products[69].img_url" alt="" class="flex-img"/></a>
+             </div>
+                  <div class="text-center" v-for="(item) in products.slice(70,78)"><a :href="'product_details.html?pid='+item.pid"><img :src="item.img_url" alt="" class="img_middle"/>
+                      <p class=" font-weight-bold p-2 mb-0">{{item.title}}</p>
+                      <span class="flex-price">￥{{item.price.toFixed(2)}}</span>
+                  </a>
+                  </div>
+                  
+            </div>
+        </div>
+
+     </div>
+
+    <div class="col-2 p-0 sales-list" id="sales_list">
+     <div class="text-center">最新销售榜</div>
+       <div class="sales-content" v-for="(item,index) in salesList" v-if="index>29&&index<32" v-cloak>
+            <span class="sales-num">{{item.sales_num}}</span>
+            <a :href="'product_details.html?pid='+item.pid"><image :src="item.img_url" class="sales-img"></image></a> 
+                <div class="sales-text">
+                    <h6>{{item.title}}</h6>
+                    <span class="sales-price">￥{{item.price.toFixed(2)}}</span>
+                </div>
+     </div>
+
+    <div id="data">
+       <div>
+        <div class="sales-content" >
+            <span class="sales-num"  >{{salesList[32].sales_num}}</span>
+             <a :href="'product_details.html?pid='+salesList[32].pid"><image :src="salesList[32].img_url" class="sales-img"></image></a>
+            <div class="sales-text">
+                <h6>{{salesList[32].title}}</h6>
+                <span class="sales-price">￥{{salesList[32].price.toFixed(2)}}</span>
+            </div>
+        </div>
+        <p class="num mb-0 on">
+            <b class="sales-color">{{salesList[32].sales_num}}</b>
+            <span>{{salesList[32].content}}</span>
+         </p>
+     </div> 
+      <div  v-for="(item,index) in salesList" v-if="index>32&&index<41"  v-cloak>
+        <div class="sales-content on">
+            <span class="sales-num">{{item.sales_num}}</span>
+            <a :href="'product_details.html?pid='+item.pid"> <image :src="item.img_url" class="sales-img"></image></a>
+            <div class="sales-text">
+                <h6>{{item.title}}</h6>
+                <span class="sales-price">￥{{item.price.toFixed(2)}}</span>
+            </div>
+        </div>
+        <p class="num mb-0">
+            <b class="sales-color">{{item.sales_num}}</b>
+            <span>{{item.content}}</span> 
+        </p>
+     </div> 
+        
+    </div>
+
+     </div>
+
+    </div>
+
+    <p class="font-weight-bold pt-3 Floor">1F LOL专区/Legends</p>
+
+    <div class="row  p_color mb-4">
+         
+            <div class="col-3 p-0" id="d2">
+                    <ul class="list-unstyled text-center" >
+                        <li><img src="image/shoes/1.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/11.png" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/3.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/4.jpg" class="vertical-img" />
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/4.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/5.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        
+            
+                    </ul>
+        </div>
+
+        <div class="col-7 flex-size p-0">
+
+            <ul id="tab" class="pl-0 mb-0 list-unstyled clear">
+                <li class="flex-item"><a data-toggle="tab" href="#content5">新品</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content6">LOL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content7">KPL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content8">电竞设备</a></li>
+            </ul>
+            <div id="content_2">
+                <div id="content5">
+                    <div>
+                        <a href=""><img src="image/kings/11.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content6">
+                    <div>
+                        <a href=""><img src="img/10.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content7">
+                    <div>
+                        <a href=""><img src="image/kings/1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/3.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/kings/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/15.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/19.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content8">
+                    <div>
+                        <a href=""><img src="image/game/CP1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/1.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/game/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/8.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/9.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-2 p-0 sales-list" id="LOLsales_list">
+            <div class="text-center">最新销售榜</div>
+              <div class="sales-content" v-for="(item,index) in salesList" v-if="index>29&&index<32" v-cloak>
+                   <span class="sales-num">{{item.sales_num}}</span>
+                   <a :href="'product_details.html?pid='+item.pid"><image :src="item.img_url" class="sales-img"></image></a> 
+                       <div class="sales-text">
+                           <h6>{{item.title}}</h6>
+                           <span class="sales-price">￥{{item.price.toFixed(2)}}</span>
+                       </div>
+            </div>
+       
+           <div id="data">
+              <div>
+               <div class="sales-content" >
+                   <span class="sales-num"  >{{salesList[32].sales_num}}</span>
+                    <a :href="'product_details.html?pid='+salesList[32].pid"><image :src="salesList[32].img_url" class="sales-img"></image></a>
+                   <div class="sales-text">
+                       <h6>{{salesList[32].title}}</h6>
+                       <span class="sales-price">￥{{salesList[32].price.toFixed(2)}}</span>
+                   </div>
+               </div>
+               <p class="num mb-0 on">
+                   <b class="sales-color">{{salesList[32].sales_num}}</b>
+                   <span>{{salesList[32].content}}</span>
+                </p>
+            </div> 
+             <div  v-for="(item,index) in salesList" v-if="index>32&&index<41"  v-cloak>
+               <div class="sales-content on">
+                   <span class="sales-num">{{item.sales_num}}</span>
+                   <a :href="'product_details.html?pid='+item.pid"> <image :src="item.img_url" class="sales-img"></image></a>
+                   <div class="sales-text">
+                       <h6>{{item.title}}</h6>
+                       <span class="sales-price">￥{{item.price.toFixed(2)}}</span>
+                   </div>
+               </div>
+               <p class="num mb-0">
+                   <b class="sales-color">{{item.sales_num}}</b>
+                   <span>{{item.content}}</span> 
+               </p>
+            </div> 
+               
+           </div>
+       
+            </div>
+       
+     
+
+    </div>
+
+
+    <p class="font-weight-bold pt-3 Floor">2F 王者荣耀专区/</p>
+
+    <div class="row  p_color mb-4">
+            <div class="col-3 p-0" id="d3">
+                    <ul class="list-unstyled text-center" >
+                        <li><img src="image/shoes/1.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/11.png" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/3.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/4.jpg" class="vertical-img" />
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/4.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/5.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        
+            
+                    </ul>
+        </div>
+
+        <div class="col-7 flex-size p-0">
+
+            <ul id="tab" class="pl-0 mb-0 list-unstyled clear">
+                <li class="flex-item"><a data-toggle="tab" href="#content9">新品</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content10">LOL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content11">KPL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content12">电竞设备</a></li>
+            </ul>
+            <div id="content_3">
+                <div id="content9">
+                    <div>
+                        <a href=""><img src="image/kings/11.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content10">
+                    <div>
+                        <a href=""><img src="img/10.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content11">
+                    <div>
+                        <a href=""><img src="image/kings/1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/3.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/kings/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/15.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/19.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content12">
+                    <div>
+                        <a href=""><img src="image/game/CP1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/1.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/game/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/8.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/9.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-2 p-0 sales-list">
+            <div class="text-center">王者荣耀销售榜</div>
+            <div class="sales-content">
+                <span class="sales-num">1</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+
+            <div class="sales-content">
+                <span class="sales-num">2</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+            <div id="data">
+                <div class="sales-content">
+                    <span class="sales-num">3</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 on">
+                    <b class="sales-color">3</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">4</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>UU41UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0">
+                    <b class="sales-color">4</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">5</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>LLLKKK1UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">5</b>
+                    <span>FllkkUV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">6</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">6</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">7</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">7</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">8</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">8</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">9</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">9</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">10</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">10</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">11</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">11</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <p class="font-weight-bold pt-3 Floor">3F 电竞设备专区/</p>
+
+    <div class="row  p_color mb-4">
+            <div class="col-3 p-0" id="d4">
+                    <ul class="list-unstyled text-center" >
+                        <li><img src="image/shoes/1.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/11.png" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/3.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/4.jpg" class="vertical-img" />
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/4.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/5.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        
+            
+                    </ul>
+        </div>
+
+        <div class="col-7 flex-size p-0">
+
+            <ul id="tab" class="pl-0 mb-0 list-unstyled clear">
+                <li class="flex-item"><a data-toggle="tab" href="#content13">新品</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content14">LOL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content15">KPL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content16">电竞设备</a></li>
+            </ul>
+            <div id="content_4">
+                <div id="content13">
+                    <div>
+                        <a href=""><img src="image/kings/11.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content14">
+                    <div>
+                        <a href=""><img src="img/10.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content15">
+                    <div>
+                        <a href=""><img src="image/kings/1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/3.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/kings/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/15.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/19.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content16">
+                    <div>
+                        <a href=""><img src="image/game/CP1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/1.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/game/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/8.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/9.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-2 p-0 sales-list">
+            <div class="text-center">王者荣耀销售榜</div>
+            <div class="sales-content">
+                <span class="sales-num">1</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+
+            <div class="sales-content">
+                <span class="sales-num">2</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+            <div id="data">
+                <div class="sales-content">
+                    <span class="sales-num">3</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 on">
+                    <b class="sales-color">3</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">4</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>UU41UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0">
+                    <b class="sales-color">4</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">5</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>LLLKKK1UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">5</b>
+                    <span>FllkkUV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">6</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">6</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">7</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">7</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">8</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">8</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">9</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">9</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">10</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">10</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">11</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">11</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <p class="font-weight-bold pt-3 Floor">4F 潮鞋系列专区/</p>
+    <div class="row  p_color mb-4">
+            <div class="col-3 p-0" id="d5">
+                    <ul class="list-unstyled text-center" >
+                        <li><img src="image/shoes/1.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/11.png" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/3.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="img/4.jpg" class="vertical-img" />
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/4.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        <li><img src="image/shoes/5.jpg" class="vertical-img"/>
+                            <p class="vertical-title">电竞轻薄笔记本</p>
+                            <span class="vertical-price">￥399.00</span>
+                        </li>
+                        
+            
+                    </ul>
+        </div>
+                        
+          
+
+        <div class="col-7 flex-size p-0">
+
+            <ul id="tab" class="pl-0 mb-0 list-unstyled clear">
+                <li class="flex-item"><a data-toggle="tab" href="#content17">新品</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content18">LOL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content19">KPL</a></li>
+                <li  class="flex-item"><a data-toggle="tab" href="#content20">电竞设备</a></li>
+            </ul>
+            <div id="content_5">
+                <div id="content17">
+                    <div>
+                        <a href=""><img src="image/kings/11.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content18">
+                    <div>
+                        <a href=""><img src="img/10.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/7.png" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/6.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="images/22.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/12.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="images/33.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="img/11.png" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content19">
+                    <div>
+                        <a href=""><img src="image/kings/1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/3.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/kings/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/8.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/15.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/kings/19.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+                <div id="content20">
+                    <div>
+                        <a href=""><img src="image/game/CP1.jpg" alt="" class="flex-img"/></a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/1.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/2.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/4.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/5.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+
+                    <div class="text-center"><a href="#"><img src="image/game/7.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">纳尔收藏款毛绒</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/6.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">OMG冷少签名背包</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/8.jpg" alt="" class="img_middle"/>
+                        <p  class=" font-weight-bold p-2 mb-0">时间刺客手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                    <div class="text-center"><a href="#"><img src="image/game/9.jpg" alt="" class="img_middle"/>
+                        <p class=" font-weight-bold p-2 mb-0">Q版洛和霞手办</p>
+                        <span class="flex-price">￥499.00</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-2 p-0 sales-list">
+            <div class="text-center">王者荣耀销售榜</div>
+            <div class="sales-content">
+                <span class="sales-num">1</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+
+            <div class="sales-content">
+                <span class="sales-num">2</span>
+                <image src="image/game/1.jpg" class="sales-img"></image>
+                <div class="sales-text">
+                    <h6>F441UV-电竞轻薄笔记本</h6>
+                    <span class="sales-price">￥3154.00</span>
+                </div>
+            </div>
+            <div id="data">
+                <div class="sales-content">
+                    <span class="sales-num">3</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 on">
+                    <b class="sales-color">3</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">4</span>
+                    <image src="image/game/1.jpg" class="sales-img"></image>
+                    <div class="sales-text">
+                        <h6>UU41UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0">
+                    <b class="sales-color">4</b>
+                    <span>F441UV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">5</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>LLLKKK1UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">5</b>
+                    <span>FllkkUV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">6</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">6</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">7</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">7</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">8</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">8</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">9</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">9</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">10</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">10</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+
+                <div class="sales-content on">
+                    <span class="sales-num">11</span>
+                    <image src="image/game/1.jpg" class="sales-img "></image>
+                    <div class="sales-text">
+                        <h6>F441UV-电竞轻薄笔记本</h6>
+                        <span class="sales-price">￥3154.00</span>
+                    </div>
+                </div>
+                <p class="num mb-0 ">
+                    <b class="sales-color">11</b>
+                    <span>QQQQV-电竞轻薄笔记本</span> </p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+  </div>
+
+    <!--首页电梯按钮-->
+    <div class="btn-group-vertical position-fixed  d-none" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">热销<br>单品</button>
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">最新<br>上架</button>
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0">LOL<br>专区</button>
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0 ">王者荣耀<br>专区</button>
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0 ">电竞设备<br>专区</button>
+        <button type="button" class="btn btn-secondary btn-sm border-light border-left-0 border-right-0 ">潮鞋<br>系列</button>
+    </div>
+
+</div>
+
+
+    <!--引入底部-->
+  <!--  <iframe src="footer.html" frameborder="0" class="my-footer"></iframe>  -->
+  <footer id="footer" class="my-footer"></footer>
+  <script src="js/index.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+
+</html>

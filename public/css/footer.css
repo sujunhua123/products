@@ -1,0 +1,63 @@
+/*底部上面的内容*/
+*{
+   margin:0;
+   padding:0; 
+}
+div ul.ul_1 li{
+   width:260px;
+    height:100px;
+}
+
+div.KuFu_bg{
+  background:black;
+}
+div.KuFu_bg h3{
+  height:57px;
+}
+div.KuFu_bg h3 i{
+    font-family: "iconfont" !important;
+}
+
+
+div.KuFu_bg h3 i,div.KuFu_bg h3 span{
+    color:white;
+}
+
+
+
+/*下面的字体颜色*/
+div ul li a{
+    color:gray;
+    font-size:14px;
+}
+
+div ul li a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+
+div ul li a.left_k{
+   color:black;
+  font-weight:bold;
+   font-size:16px;
+
+}
+
+
+/*底部样式*/
+#bottom_style ul{
+  width:180px;
+    margin:0 auto;
+}
+
+#img_bottom div img{
+    height:80px;
+}
+
+
+#img_bottom div:last-child p{
+    font-size:14px;
+   width:480px;
+    color:gray;
+}

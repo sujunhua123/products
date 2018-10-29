@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/personCenter.css"/>
+    <script  src="js/jquery.min.js"></script>
+    <script  src="js/popper.min.js"></script>
+    <script  src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+   <!--引入头部-->
+      <header id="header" class="my-header"></header>
+  <table></table>
+     <div class="container ">
+    <!--个人中心-->
+      <div class="row">
+           <image src="image/person/person.png" class="person_img"></image>
+       </div>
+      <div class="row">
+          <div class="col-2">
+            <ul class="list-unstyled person_center1">
+                <li><a href="javascript:;">个人中心</a></li>
+               <li class="my-order"><a href="javascript:;">我的订单</a></li>
+              <li  class="active my-cart"><a href="javascript:;">我的购物车</a></li>
+              <li><a href="javascript:;">商品收藏</a></li>
+              <li><a href="javascript:;">收货地址</a></li>
+              <li><a href="javascript:;">个人资料</a></li>
+              <li ><a href="javascript:;">商店公告</a></li>
+               <li></li>
+           </ul>
+
+         </div>
+      <div class="col-10" id="Carts-details">
+
+        <div class="row">
+            <ul class="list-unstyled person_center2 mb-0">
+                <li class="float-left active">全部</li>
+                <li class="float-left">待付款</li>
+                <li class="float-left">待发货</li>
+                <li class="float-left">待收货</li>
+                <li class="float-left">待评价</li>
+            </ul>
+        </div>
+        <!--我的订单-->
+     <!--  <div id="myOrder">
+                 <div class="row person_detail">
+                        <div class="col-5">订单商品</div>
+                            <div class="col-7">
+                                <ul class="list-unstyled  person_center3">
+                                    <li class="float-left">订单号</li>
+                                    <li class="float-left">总金额</li>
+                                    <li class="float-left">状态</li>
+                                    <li class="float-left">操作</li>
+                                </ul>
+                            </div>
+                        </div>
+                      <div >
+                            <div class="row record" id="Carts_no">
+                                <p >亲爱的顾客,您暂无订单记录</p>
+                            </div>
+
+        </div>
+    -->
+        
+
+        <!--我的购物车-->
+        <div  id="myCart">   
+             <div class="row person_detail">
+                <div class="col-5">商品类型</div>
+                    <div class="col-7">
+                        <ul class="list-unstyled  person_center3">
+                            <li class="float-left">单价(元)</li>
+                            <li class="float-left">数量</li>
+                            <li class="float-left">小计</li>
+                            <li class="float-left">操作</li>
+                        </ul>
+                    </div>
+                </div>
+              <div >
+                    <div class="row record" id="Carts_no">
+                        <p >您的购物车中还没有商品， 去逛逛吧</p>
+                    </div>
+                    
+                 <div class="row record" v-for="(item,index) in res" >
+                        <div class="col-5">
+                        <input type="checkbox" name="check" class="carts-checkbox" :value="item.pid" v-model="check" >
+                        <img :src="item.img_url" alt="" class="carts-img">
+                        <span> {{item.title}}</span>
+                        </div> 
+                    <div class="col-7 row carts" >
+                
+                    <div class="col-3">
+                        <span>￥{{item.price}}</span>
+                    </div>
+                    <div class="col-3">
+                    <button class="carts-less" @click=less(index,$event)>-</button>
+                    <input type="text" :value="item.num" class="carts-num text-center">
+                    <button class="carts-add" @click=add(index,$event)>+</button>
+                    </div>
+                    <div class="col-3">
+                    <span id="sums" class="money">￥{{item.sum}}</span>
+                    </div>  
+                
+                    <div class="col-3 Delete" >
+                    <span>收藏 /</span>
+                    <span @click=deletes(index,$event)>删除</span>
+                    </div>
+            
+                </div> 
+
+
+              </div>
+            <div class="row" id="totals">
+                <input type="checkbox" class="carts-checkbox mr-2" id="selectAll" >
+                <span class="all_select" id="selectAll" >全选</span>
+                <span>总计:￥<b class="money" v-cloak>{{total}} </b></span>
+                <span class="delete_carts" @click="deletesAll">清空购物车</span>
+          </div>
+     </div>    
+          
+
+       </div>
+
+      </div>  
+    
+  </div>
+
+
+
+
+
+     </div>
+ <!--引入底部-->
+    <footer id="footer" class="my-footer"></footer>
+   <script src="js/ajax.js"></script>
+   <script src="js/header.js"></script>
+   <script src="js/footer.js"></script>
+   <script src="js/products_Center.js"></script>
+</body>
+
+
+</html>

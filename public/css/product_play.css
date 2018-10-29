@@ -1,0 +1,198 @@
+div.nav-item{
+    border:1px solid #ccc;
+    background:white;
+}
+
+div.nav-item ul li:first-child{
+    padding-top:24px;
+}
+
+
+div.nav-item ul li{
+   margin:0 25px;
+
+}
+
+div.nav-item ul li span{
+    display:inline-block;
+    padding-top:24px;
+    font-size:14px;
+    color:#A1A1A1;
+}
+
+div.nav-item ul li p{
+    font-size:14px;
+    color:#A1A1A1;
+
+}
+
+
+
+div ul.nav-list li{
+  border:1px solid #ccc;
+  background:white;
+  padding:6px 24px;
+  border-radius:5px;
+  margin:0 4px;
+}
+
+.nav-gif{
+   display:flex;
+}
+.nav-gif a{
+  margin:6px 14px;
+  text-decoration: none;
+ transition:all 1s;
+  background:#FFFFFF;
+}
+
+.nav-gif a:hover{
+    transform:scale(1.1);
+}
+
+.nav-img{
+   width:200px;
+    height:180px;
+}
+
+
+
+/*照片里面的内容*/
+.player-grade{
+   background:#FF7D7B;
+   color:white;
+    font-size:12px;
+  border-radius:6px;
+}
+.player-size1{
+   color:#999999;
+   font-size:12px;
+}
+.player-size2{
+    color:#999999;
+   font-size:14px;
+}
+
+
+.player-size2 b{
+  color:#FF7D7B;
+  font-size:18px;
+}
+
+/*翻页列表*/
+ul.page_666{
+    margin-right: 220px;
+}
+
+ul.page_666 li{
+    float:right;
+    padding:6px 16px;
+    font-size:18px;
+    margin:0 4px;
+    border:2px solid #090909;
+    border-radius:4px;
+    background:#090909;
+}
+ul.page_666 li a{
+    color:white;
+}
+
+ul.page_666 li a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+/*下面的自动轮播图*/
+.auto_1{
+    border-bottom: 3px solid #F74D2A;
+}
+
+.auto_2{
+    color:#f74d2a;
+    font-size:15px;
+}
+
+.auto_3{
+    color:#f74d2a;
+    font-size:15px;
+    border:1px solid #f74d2a;
+    padding:5px 10px;
+}
+
+.auto_3:hover{
+    text-decoration: none;
+    color:#f74d2a;
+}
+
+
+/*自动轮播图的图片大小*/
+#d1 ul{
+    list-style: none;
+    width: 2895px;
+    border: 3px solid orange;
+}
+
+
+#d1 ul li{
+    float: left;
+    margin: 10px;
+}
+
+#d1{
+    width: 100%;
+    height: 260px;
+    border: 1px solid red;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#d1 ul li img{
+    width:180px;
+    height:210px;
+}
+
+#d1 ul li p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*榜单*/
+.List{
+   background:#fff;
+   border-radius:6px;
+}
+.List span{
+   display:inline-block;
+
+}
+
+.List span b{
+   color:red;
+}
+.List span:nth-child(2){
+  font-size:12px;
+  border:1px solid #666;
+   padding:0px 10px;
+  border-radius:5px;
+  color:#666;
+}
+
+
+.List-item p{
+   color:#666;
+   font-size:14px;
+}
+
+.List-item p b{
+    color:red;
+}
+
+/*收起筛选框的动画效果*/
+#list-player{
+   height:426px;
+   overflow: hidden;
+   transition:all .5s linear;
+}
+

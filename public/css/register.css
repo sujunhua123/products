@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0; 
+ }
+.logo{
+    height:106px;
+}
+.Img_1{
+    float:left;
+    margin-left:260px;
+}
+
+.size_b{
+    float:left;
+    letter-spacing: 5px;
+    font-size:30px;
+    font-weight:normal;
+    margin:30px 0 0 60px;
+    border-left:2px solid gray;
+    padding-left:60px;
+
+}
+
+.Img_2{
+    width:100%;
+    height:800px;
+    position:relative;
+}
+
+/*登录框的大小*/
+.login_form{
+    width:450px;
+    height:650px;
+    position:absolute;
+    top:180px;
+    right:200px;
+    background:#fff;
+}
+
+/*top*/
+
+.login_top{
+    height:60px;
+    line-height: 60px;
+    border-bottom:2px solid #F4F4F4;
+
+}
+.login_top a:first-child{
+    padding-bottom:12px;
+    border-bottom:2px solid #E4393C;
+    color:black;
+    font-size:24px;
+}
+.login_top a:nth-child(2){
+    font-size:18px;
+    color:#888;
+}
+.login_top a:hover{
+    text-decoration:none;
+    color:red;
+}
+
+/*注册信息*/
+.login_uname p{
+    float: left;
+}
+
+.login_uname,.login_upwd,.login_cpwd,.login_email,.login_phone{
+    border:2px solid #BDBDBD;
+    margin:0 auto;
+    width:390px;
+    height:50px;
+}
+
+.login_uname span,.login_upwd span,.login_cpwd span,.login_email span,.login_phone span{
+    float: left;
+    width:80px;
+    height:46px;
+    background:#E3E3E3;
+    border:1px solid #BDBDBD;
+    line-height:46px;
+    text-align: center;
+    font-weight:bold;
+}
+
+.login_uname input,.login_upwd input,.login_cpwd input,.login_email input,.login_phone input{
+    height:46px;
+    width:306px;
+    font-size:20px;
+}
+
+
+
+/*提交按钮*/
+.login_btn  input{
+    margin-top:30px;
+    width:360px;
+    height:45px;
+    font-size:18px;
+}
+/*其他登录方式*/
+.login_others a p{
+    color:gray;
+}
+.login_others a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+.login_others a img{
+    width:130px;
+}
+
+
+/*版权样式*/
+#img_bottom div img{
+    height:80px;
+}
+
+
+#img_bottom div:last-child p{
+    font-size:14px;
+    letter-spacing:1px;
+    width: 550px;
+    color:gray;
+}
+
+

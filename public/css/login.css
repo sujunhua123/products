@@ -1,0 +1,129 @@
+.logo{
+    height:106px;
+}
+.Img_1{
+    float:left;
+  margin-left:260px;
+}
+
+.size_b{
+    float:left;
+    letter-spacing: 5px;
+   font-size:30px;
+   font-weight:normal;
+   margin:30px 0 0 60px;
+   border-left:2px solid gray;
+   padding-left:60px;
+
+}
+
+.Img_2{
+    width:100%;
+    height:800px;
+    position:relative;
+}
+
+/*登录框的大小*/
+.login_form{
+   width:400px;
+   height:500px;
+   position:absolute;
+   top:240px;
+   right:200px;
+   background:#fff;
+}
+
+/*top*/
+
+.login_top{
+  height:60px;
+  line-height: 60px;
+  border-bottom:2px solid #F4F4F4;
+
+}
+.login_top a:first-child{
+    padding-bottom:12px;
+    border-bottom:2px solid #E4393C;
+    color:black;
+    font-size:24px;
+}
+.login_top a:nth-child(2){
+    font-size:18px;
+    color:#888;
+}
+.login_top a:hover{
+    text-decoration:none;
+    color:red;
+}
+.login_uname,.login_upwd{
+    margin:0 auto;
+    border:2px solid #BDBDBD;
+   width:90%;
+    height:50px;
+}
+
+.login_uname span,.login_upwd span{
+     float: left;
+    width:50px;
+    height:46px;
+    background:#E3E3E3;
+    border:1px solid #BDBDBD;
+}
+
+.login_uname input,.login_upwd input {
+    height:46px;
+    width:306px;
+    font-size:20px;
+}
+
+/*自动登录*/
+.login_check input{
+    height:20px;
+   width:20px;
+    vertical-align: middle;
+}
+
+.login_check a{
+    font-size:20px;
+    color:grey;
+}
+
+.login_check a:hover{
+    text-decoration:none;
+    color:red;
+}
+
+.login_btn input{
+    width:360px;
+    height:45px;
+    font-size:18px;
+}
+/*其他登录方式*/
+.login_others a p{
+   color:gray;
+}
+.login_others a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+.login_others a img{
+    width:126px;
+}
+
+
+/*版权样式*/
+#img_bottom div img{
+    height:80px;
+}
+
+
+#img_bottom div:last-child p{
+    font-size:14px;
+    letter-spacing:1px;
+    width: 550px;
+    color:gray;
+}
+
+
+
